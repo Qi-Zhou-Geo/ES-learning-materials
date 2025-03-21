@@ -1,0 +1,27 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+# __modification time__ = 2025-02-16
+# __author__ = Qi Zhou and Sibashish Dash, GFZ Helmholtz Centre for Geosciences
+# __find me__ = qi.zhou@gfz.de, qi.zhou.geo@gmail.com, https://github.com/Qi-Zhou-Geo
+# Please do not distribute this code without the author's permission
+
+feature_type_A:
+  - 22 # Energy of signals filtered in 1-5 Hz
+  - 23 # Energy of signals filtered in 5-15 Hz
+  - 24 # Energy of signals filtered in 15-25 Hz
+  - 25 # Energy of signals filtered in 25-35 Hz
+  - 35 # Interquartile range (Q75 - Q25)
+
+
+# read as "list" in python
+feature_type_E:
+  - 22 # Energy of signals filtered in 1-5 Hz
+  - 23 # Energy of signals filtered in 5-15 Hz
+  - 24 # Energy of signals filtered in 15-25 Hz
+  - 25 # Energy of signals filtered in 25-35 Hz
+  - 35 # Interquartile range (Q75 - Q25)
+
+# read as "dictionary" in python
+person:
+  sub_window_size: 60 # unit by second

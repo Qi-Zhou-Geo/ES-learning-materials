@@ -59,19 +59,24 @@ q()
 ```
 
 ### 1.4, sbatch file for Python
-Prepare a **example.sh** file with the following information, <br>
-and make sure you have the test.py
+Prepare a **run.sh** file with the following information, <br>
+and make sure you have the [read_data_from_Glic.py](example/read_data_from_Glic.py)
 ```sh
 #!/bin/bash
 #SBATCH -t 4-00:00:00              # time limit: (D-HH:MM:SS) 
-#SBATCH --job-name=Qi_run          # job name, "Qi_run"
+#SBATCH --job-name=example          # job name, "Qi_run"
 #SBATCH --ntasks=1                 # each individual task in the job array will have a single task associated with it
 #SBATCH --mem-per-cpu=8G		       # Memory Request (per CPU; can use on GLIC)
 
-source /your/path/for/miniforge3/bin/activate
+#SBATCH --chdir=/storage/vast-gfz-hpc-01/project/seismic_data_qi/#temp/ES-learning-materials # set working dir
+#SBATCH --output=out_%A_%a_%x.txt  # Standard Output Log File
+#SBATCH --error=err_%A_%a_%x.txt   # Standard Error Log File
+
+source /your/path/to/output/miniforge3/bin/activate
 conda activate seismic
 
-run python /your/python/file/path/test.py
+srun python example/read_data_from_Glic.py
+
 ```
 
 ### 1.5, sbatch file for R (Not recommended)
@@ -100,19 +105,12 @@ please do NOT overwrite or delete any file.
 ## 3, Access Seismic Data
 You can use this code to fetch and convert the seismic data to numpy,
 ```python
-example/seismic_data_processing.py
-```
-please remember to update the path for
-```python
-# import CONFIG_dir as a global variable
-from config.config_dir import CONFIG_dir
-# import manually remove sensor response
-from calculate_features.remove_sensor_response import manually_remove_sensor_response
+example/read_data_from_Glic.py
 ```
 
 ## 4, Download Data
 If you do not want to work on Glic, <br>
-you can download the seismic data to your local PC by FileZilla, <br>
-and run this code [read_data_from_Glic](./example/seismic_data_processing.py) in Pycharm or VS code
+you can download the seismic data to your local PC by [FileZilla](FileZilla/FileZilla.png), <br>
+and run this code [read_data_from_Glic](../example/seismic_data_processing.py) in Pycharm or VS code
 
 personally, I higly suggested to perform your work on Glic and liberate you PC.

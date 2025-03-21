@@ -1,0 +1,226 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+# __modification time__ = 2025-02-16
+# __author__ = Qi Zhou and Sibashish Dash, GFZ Helmholtz Centre for Geosciences
+# __find me__ = qi.zhou@gfz.de, qi.zhou.geo@gmail.com, https://github.com/Qi-Zhou-Geo
+# Please do not distribute this code without the author's permission
+
+# catchment mapping, load as "dictionary" in python
+
+
+# seismic data source in the GFZ-GLIC server
+"glic_sac_dir": "/storage/vast-gfz-hpc-01/project/seismic_data_qi/seismic"
+
+# data structure for the following
+# Illgraben-9J:
+  # path_mapping: "European/Illgraben"
+  # response_type: "xml" == with xml file,
+                 # "simulate" == with poles and zeros,
+                 # "direct" == # without poles and zeros
+  # sensor_type: "do-not-need"
+  # normalization_factor: 1) "do-not-need", 2) or use some number when "direct"
+
+
+# Europen
+Illgraben-9J:
+  path_mapping: "European/Illgraben"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+Illgraben-9S:
+  path_mapping: "European/Illgraben"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+Gadria-GA:
+  path_mapping: "European/Gadria"
+  response_type: "direct"
+  sensor_type: "un-known"
+  # the original amplitude data unit by um/s, devide 1e6 to velocity meter/second
+  normalization_factor: 1e6
+
+Casamicciola-IV:
+  path_mapping: "European/Casamicciola"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+
+
+# North American
+"Chalk_Cliffs-Y7":
+  path_mapping: "North_American/Chalk_Cliffs"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Chalk_Cliffs-ch": # Chalk Cliffs 2014 Exotic Event Catalogue
+  path_mapping: "North_American/Chalk_Cliffs"
+  response_type: "direct"
+  sensor_type: "do-not-need"
+  # the original amplitude (Kate Allstadt) data unit by m/s
+  normalization_factor: 1 * 10**0
+
+"Chaos_Canyon-C0":
+  path_mapping: "North_American/Chaos_Canyon"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Montecito-CI":
+  path_mapping: "North_American/Montecito"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Mount_Adams-UW":
+  path_mapping: "North_American/Mount_Adams"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Mount_Baker-UW":
+  path_mapping: "North_American/Mount_Baker"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Mount_Hood-CC":
+  path_mapping: "North_American/Mount_Hood"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Mount_Joffre-CN":
+  path_mapping: "North_American/Mount_Joffre"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Mount_Meager-CN":
+  path_mapping: "North_American/Mount_Meager"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Mount_Rainier-UW":
+  path_mapping: "North_American/Mount_Rainier"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Mount_Shasta-NC":
+  path_mapping: "North_American/Mount_Shasta"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Mount_Spurr-AV":
+  path_mapping: "North_American/Mount_Spurr"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Mount_St_Helens-CC":
+  path_mapping: "North_American/Mount_St_Helens"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Museum_Fire-1A":
+  path_mapping: "North_American/Museum_Fire"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Oso-CC":
+  path_mapping: "North_American/Oso"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Oso-UW":
+  path_mapping: "North_American/Oso"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Redoubt-AV":
+  path_mapping: "North_American/Redoubt"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Shishaldin-AV":
+  path_mapping: "North_American/Shishaldin"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Swift_No2_Dam-UW":
+  path_mapping: "North_American/Swift_No2_Dam"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Villa_Santa-C1":
+  path_mapping: "South_American/Villa_Santa"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+
+# Asian
+"Bothekoshi-XN": # GLOF
+  path_mapping: "Asian/Bothekoshi"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+"Dongchuan-DC": # DC data is from Dr. Dongri Song and Dr. Shuai Li
+  path_mapping: "Asian/Dongchuan"
+  response_type: "simulate"
+  sensor_type: "paz_3D_Geophone_PE_6_B16" # gain is 16
+  normalization_factor: "do-not-need"
+
+"Foutangba-MJ": # FTB data is from Prof. Dr. Yan Yan
+  path_mapping: "Asian/Foutangba"
+  response_type: "simulate"
+  sensor_type: "paz_3D_NoiseScope"
+  # the amplitude data devide 2 * 10**9 to velocity meter/second
+  normalization_factor: "do-not-need"
+
+"Ergou-MJ":
+  path_mapping: "Asian/Ergou"
+  response_type: "simulate"
+  sensor_type: "paz_3D_Geophone_PE_6_B32" # gain is 32
+  normalization_factor: "do-not-need"
+
+"Goulinping-CC": # Goulinping 2022 data is from LanZhou
+  path_mapping: "Asian/Goulinping"
+  response_type: "direct"
+  sensor_type: "un-known"
+  # the amplitude data devide 2 * 10**9 to velocity meter/second
+  normalization_factor: 2 * 10**9
+
+"Ramche-XF": # 50 Hz SPS
+  path_mapping: "Asian/Ramche"
+  response_type: "xml"
+  sensor_type: "do-not-need"
+  normalization_factor: "do-not-need"
+
+
+
+# Oceania
+"Ruapehu-MR": # GLOF
+  path_mapping: "Oceania/Ruapehu"
+  response_type: "direct"
+  sensor_type: "do-not-need (Guralp 6T)"
+  # Ruapehu 2007 data, e.g., thr original is m/s^2 in the paper,
+  # and peak value is around 0.027 m/s^2, and original SPS is 0.01,
+  # so the ground vibration is around 0.027 m/s^2 * dt (2.7e-4 m/s)
+  # the amplitude data devide 10**10 to velocity meter/second
+  normalization_factor: 5 * 10**9

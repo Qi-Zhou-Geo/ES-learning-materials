@@ -1,0 +1,41 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+# __modification time__ = 2025-02-16
+# __author__ = Qi Zhou and Sibashish Dash, GFZ Helmholtz Centre for Geosciences
+# __find me__ = qi.zhou@gfz.de, qi.zhou.geo@gmail.com, https://github.com/Qi-Zhou-Geo
+# Please do not distribute this code without the author's permission
+
+
+# Description: Trained using feature D, calculated from 9S ILL12 data (2017–2019).
+# "Type A + Type C (without the network features)"
+feature_type_D: "Type A + Type C (without the network features)"
+LSTM_D:
+  ref_model_name: "LSTM-station-ILL02-feature-D-repeate-XXX.pt"
+  lstm_feature_size: 70
+  device: "CPU"
+  batch_size: 64
+  seq_length: 32
+
+
+
+# Description: Trained using feature E, calculated from 9S ILL12 data (2017–2019).
+feature_type_E:
+  - 9  # BL
+  - 10
+  - 22 # freq in Energy of signals filtered in 1-5, 5-15, 15-25,
+  - 23
+  - 24
+  - 33
+  - 34
+  - 35 # 35 is Interquartile range (Q75 - Q25)
+  - 37
+  - 57
+  - 58
+
+LSTM_E:
+  ref_model_name: "LSTM-station-ILL02-feature-E-repeate-XXX.pt"
+  lstm_feature_size: 11
+  device: "CPU"
+  batch_size: 64
+  seq_length: 32
