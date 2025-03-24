@@ -1,9 +1,0 @@
-## how to use this?
-# 1, you alway need to add the "rules" first, then add/remove your file,
-#    the git will automatically ingore the "big/untracked"file
-# 2, if you alrady add/commit the changes,
-#    use the following back to the old version
-# git reset --hard <reversion number>
-
-
-.DS_Store
